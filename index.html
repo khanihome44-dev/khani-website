@@ -498,7 +498,7 @@ src="https://www.facebook.com/tr?id=1386211497044279&ev=PageView&noscript=1"
   const grid = document.getElementById('testimonialGrid');
   if (grid) {
     testimonialItems.forEach((item, i) => {
-      const thumbSrc = item.src.replace(/\.(jpg|jpeg|mp4)$/i, '-thumb.jpg');
+      const thumbSrc = item.type === 'video' ? item.src : item.src.replace(/\.(jpg|jpeg)$/i, '-thumb.jpg');
       const cell = document.createElement('button');
       cell.type = 'button';
       cell.className = 'relative rounded-xl overflow-hidden aspect-square group cursor-pointer';
